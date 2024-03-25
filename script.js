@@ -1,4 +1,6 @@
-fetch("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1")
+const apiKey = "77935b2b10a58365e739782a55c23053";
+
+fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${apiKey}`)
   .then((res) => {
     return res.json();
   })
