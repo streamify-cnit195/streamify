@@ -4,12 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Streamify</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" property="og:description"
+        content="Streamify is an app that displays the TMDb api in an accessible, user friendly layout and exposes users to the review database">
+        <meta property="og:type" content="website">
+    <meta property="og:site-name" content="Streamify">
+    <meta property="og:title" content="website">
+    <!-- <meta name="url" property="og:url" content="https://streamify.com/en"> -->
+    <!-- <meta name="og:image" content="https://streamify/images/meta/logo.png"> -->
+    <meta name="keywords" content="treamify Movies, Streamify Info, Streamify TV" <link rel="canonical"
+        href="https:streamify.com/en">    
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <h1>STREAMIFY - testing api call</h1>
+    <div></div>
+    <header id="navbar">
+          <a href="/" class="home-link">
+              <div class="navbar-logo"></div>
+              <!-- <img src="" class="navbar-logo"> -->
+              Streamify
+          </a>
+          <nav class="navbar-container container"></nav>
+          <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+              aria-expanded="false">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <div id="navbar-menu" aria-labelledby="navbar-toggle">
+              <ul class="navbar-links">
+                  <li class="navbar-item"><a class="navbar-link" href="/language" onclick="closeMenu()">Language</a>
+                  </li>
+                  <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
+                  <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
+                  <li class="navbar-item"><a class="navbar-link" href="/signin">SignIn</a></li>
+              </ul>
+          </div>
+        </nav>
+          <label class="search">Search
+              <form action="/" class="search-btn">
+                  <input type="text" placeholder=" movie, tv ...">
+              </form>
+          </label>
+      
+  </header>
+
+<!-- video preview -->
+<section class="videopreview">
+    <article id="videopreview"></article>
+</section>
+<!-- movies -->
+<section class="movies">
+    <h1>testing api call</h1>
     <h1>Popular Movies</h1>
-    <article id="movies"></article>
-    <script src="script.js"></script>
+    <article id="movies" class="movieheader"></article>
+</section>
+
+  <script src="script.js"></script>
   </body>
 </html>
