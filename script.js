@@ -32,7 +32,7 @@ window.onload = function() {
   }
   
   // API call for header movie trailer
-  const apiKey = "77935b2b10a58365e739782a55c23053";
+  const apiKey = "";
   
   fetch(`https://api.themoviedb.org/3/movie/550?videos&language=en-US&api_key=${apiKey}`)
     .then((res) => {
