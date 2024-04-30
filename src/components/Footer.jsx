@@ -18,11 +18,11 @@ const Footer = () => {
           <li>Jobs</li>
           <li>Ways to Watch</li>
           <li>Corporate Information</li>
-          <li>Only on Netflix</li>
+          <li>Only on Streamify</li>
         </ul>
         <ul>
           <li>Account</li>
-          <li>Netflix Shop</li>
+          <li>Streamify Shop</li>
           <li>Terms of Use</li>
           <li>Contact Us</li>
           <li>Personal Information</li>
