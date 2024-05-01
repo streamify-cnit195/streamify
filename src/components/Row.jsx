@@ -10,7 +10,7 @@ const Row = ({ title, fetchURL, rowID }) => {
     axios.get(fetchURL).then((response) => {
       setMovies(response.data.results);
     });
-  }, []);
+  });
 
   const slideLeft = () => {
     var slider = document.getElementById("slider" + rowID);
