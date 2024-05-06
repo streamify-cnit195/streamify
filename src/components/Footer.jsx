@@ -35,8 +35,8 @@ const Footer = () => {
           <li>Speed Test</li>
           <li>Ad Choices</li>
         </ul>
-        <Link to='https://www.themoviedb.org/'>
-        <img src={TMDB} alt="TMDB logo" className=" col-span-full w-full h-5 mt-6 " />
+        <Link to='https://www.themoviedb.org/'  target="_blank">
+        <img src={TMDB} alt="TMDB logo" className="  h-5 mt-6 " />
         </Link>
       </div>
     </div>
