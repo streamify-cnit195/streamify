@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Result from './Result';
 import styles from './SearchBar.module.css';
+import {FaSearch} from "react-icons/fa";
 
 const SearchBar = () => {
-  const [value, setValue] = useState(''); // Here we'll store the value of the search bar's text input
-  const [suggestions, setSuggestions] = useState([]); // This is where we'll store the retrieved suggestions
+  const [value, setValue] = useState(''); 
+  const [suggestions, setSuggestions] = useState([]); 
   const [hideSuggestions, setHideSuggestions] = useState(true);
   const [result, setResult] = useState(null);
 
@@ -17,10 +18,9 @@ const SearchBar = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `https://dummyjson.com/products/search?q=${value}`
+          `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1, ${value}`
         );
-
-        setSuggestions(data.products);
+        setSuggestions(data.title);
       } catch (error) {
         console.log(error);
       }
@@ -30,8 +30,10 @@ const SearchBar = () => {
   }, [value]);
 
   return (
-    <>
-      <div className={styles.container}>
+    <> 
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">  
+      <div className={styles.container}> 
+        <FaSearch className={styles.search_icon} /> 
         <input
           onFocus={() => setHideSuggestions(false)}
           onBlur={async () => {
@@ -47,6 +49,7 @@ const SearchBar = () => {
             setValue(e.target.value);
           }}
         />
+     </div>    
         <div
           className={`${styles.suggestions} ${
             hideSuggestions && styles.hidden
@@ -61,7 +64,7 @@ const SearchBar = () => {
             </div>
           ))}
         </div>
-      </div>
+        </div>
       {result && <Result {...result} />}
     </>
   );
