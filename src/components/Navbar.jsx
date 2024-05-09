@@ -7,12 +7,12 @@ const Navbar = () => {
 return (
 <>
   <nav className="sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-10xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between p-4 z-[100] w-full">
           <Link to='/'>
-            <h1 className= "text-red-600 text-4xl font-bold cursor-pointer">STREAMIFY</h1>
+            <h1 className= "text-red-600 left-0 top-0 sm:text-2xl md:text-4xl p-4 font-bold cursor-pointer">STREAMIFY</h1>
           </Link>
-          <div className="w-7/12 flex justify end align-middle">   
+          <div className="w-8/12 flex justify-end">   
             <div className="hidden md:flex">
               <button className= "text-white hover:bg-gray-50/20 px-6 py-2 mr-2 rounded cursor-pointer">Sign in</button>
               <button className="bg-red-600 text-white hover:bg-gray-50/20 px-6 py-2 rounded cursor-pointer">Sign up</button>
