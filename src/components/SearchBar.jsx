@@ -31,7 +31,7 @@ const SearchBar = () => {
 
   return (
     <> 
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">  
+    <div className="max-w-10xl px-4 sm:px-6 lg:px-8">  
       <div className={styles.container}> 
         <FaSearch className={styles.search_icon} /> 
         <input
