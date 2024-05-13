@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Result from './Result';
 import styles from './SearchBar.module.css';
-import {FaSearch} from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import requests from "../Requests";
 
 const SearchBar = () => {
   const [value, setValue] = useState(''); 
@@ -10,28 +11,28 @@ const SearchBar = () => {
   const [hideSuggestions, setHideSuggestions] = useState(true);
   const [result, setResult] = useState(null);
 
+
   const findResult = (title) => {
     setResult(suggestions.find((suggestion) => suggestion.title === title));
   };
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async() => {
       try {
         const { data } = await axios.get(
-          `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1, ${value}`
+          setResult(requests.requestMovieTitle)
         );
         setSuggestions(data.title);
       } catch (error) {
         console.log(error);
       }
     };
-
     fetchData();
   }, [value]);
 
   return (
     <> 
-    <div className="max-w-10xl px-4 sm:px-6 lg:px-8">  
+    <div className="max-w-7xl px-4 sm:px-6 lg:px-8">  
       <div className={styles.container}> 
         <FaSearch className={styles.search_icon} /> 
         <input
@@ -52,8 +53,7 @@ const SearchBar = () => {
      </div>    
         <div
           className={`${styles.suggestions} ${
-            hideSuggestions && styles.hidden
-          }`}
+            hideSuggestions && styles.hidden }`}
         >
           {suggestions.map((suggestion) => (
             <div
@@ -65,7 +65,7 @@ const SearchBar = () => {
           ))}
         </div>
         </div>
-      {result && <Result {...result} />}
+      {/* {result && <Result {...result} />} */}
     </>
   );
 };
